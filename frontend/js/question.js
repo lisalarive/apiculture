@@ -95,7 +95,7 @@ async function recuperer_input_reponse(){
 	console.log("La réponse attendue est : ", reponse_attendue);
 
 	//comparer
-	let reponse_serveur = await fetch("https://apiculture-6b3c640e4145.herokuapp.com/verifier_reponse_du_joueur/" + input_reponse + "/" + reponse_attendue);
+	let reponse_serveur = await fetch("https://apiculture-6b3c640e4145.herokuapp.com/verifier_reponse_joueur/" + input_reponse + "/" + reponse_attendue);
 	bool_reponse_joueur = await reponse_serveur.json();
 	console.log("Le résultat de la vérification est :", bool_reponse_joueur);
 
