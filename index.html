@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5; url=frontend/index.html">
+    <meta http-equiv="refresh" content="3; url=frontend/index.html">
     <title>API-Culture</title>
     <link rel="icon" href="frontend/img/abeille_mascotte_final.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -46,6 +47,32 @@
             animation: trace 1.8s ease-out forwards;
         }
         @keyframes trace { to { opacity: 0; transform: scale(0.2); } }
+        .chargement {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 8%;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 7px;
+            color: #3E2A1E;
+            font-family: 'Kavoon', cursive;
+            font-size: 1.3rem;
+        }
+        .chargement i {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: saut 1.4s ease-in-out infinite;
+        }
+        .chargement i:nth-of-type(2) { animation-delay: 0.2s; }
+        .chargement i:nth-of-type(3) { animation-delay: 0.4s; }
+        @keyframes saut {
+            0%, 60%, 100% { transform: translateY(0); }
+            30%           { transform: translateY(-9px); }
+        }
     </style>
 </head>
 <body>
@@ -54,6 +81,7 @@
             <img src="frontend/img/Accueil/logo_provisoire.png" alt="API-Culture">
         </header>
         <img class="abeille" src="frontend/img/abeille_mascotte_final.png" alt="Abeille d'API-Culture">
+        <div class="chargement">Chargement<i></i><i></i><i></i></div>
     </a>
     <script>
         var scene = document.querySelector("a");
@@ -92,7 +120,7 @@
         if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
             requestAnimationFrame(voler);
         }
-        setTimeout(function () { location.replace("frontend/index.html"); }, 3500);
+        setTimeout(function () { location.replace("frontend/index.html"); }, 2000);
     </script>
 </body>
 </html>
